@@ -1,13 +1,11 @@
 # Environment Setup
 setup-venv:
 	python3 -m venv venv
-	. venv/bin/activate && pip install $(if $(POETRY),poetry,) -r requirements.txt
+	. venv/bin/activate && pip install -r requirements.txt
 
 setup-conda:
 	@echo "Setting up Conda environment..."
 	conda create -n legion python=3.11 -y
-	@echo "Installing Poetry in Conda environment..."
-	conda run -n legion pip install poetry
 	@echo "Installing dependencies with Poetry in Conda environment..."
 	conda run -n legion POETRY_VIRTUALENVS_CREATE=false poetry install
 
