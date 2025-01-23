@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-This guide will help you get started with Legion quickly. We'll cover the basic setup and show you how to create your first multi-agent system.
+This guide will help you get started with Legion quickly. We'll cover the basic setup and show you how to create your first agent.
 
 ## Prerequisites
 
@@ -15,16 +15,25 @@ pip install legion
 
 ## Basic Usage
 
+Save your OpenAI API key in a .env file.
+
+```bash
+OPENAI_API_KEY='<API-KEY>'
+```
+
 Here's a simple example of creating an agent:
 
 ```python
 from legion.agents import agent
 from legion.interface.decorators import tool
+from dotenv import load_dotenv
+
+load_dotenv()
 
 @agent(model="openai:gpt-4-turbo", temperature=0.2)
 class SimpleAgent:
     """A simple agent that can perform basic tasks"""
-    
+
     @tool
     def greet(self, name: str) -> str:
         """Greet someone by name"""

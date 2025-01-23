@@ -83,7 +83,8 @@ nav:
       - Provider Configuration: core-concepts/providers/provider-configuration.md
   - Examples & Tutorials:
     - Basic Examples: examples/basic-examples.md
-  - Contributing: 
+    - Build a chatbot: examples/chatbot.md
+  - Contributing:
     - Contribution Guide: contributing/index.md
     - Project Structure: contributing/project-structure.md
     - Architecture Overview: contributing/architecture.md
